@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .toolbar{
+            position: fixed;
+            left: 50%;
+            bottom: 10px;
+        }
+        /*.toolbar-item{*/
+            /*position: relative;*/
+        /*}*/    /*当父级相对定位元素宽度不够时，子级绝对定位元素将无法显示*/
+        .toolbar-layer{
+            position: absolute;
+            left: 0;
+            width: 160px;
+            height: 205px;
+            background: url("iamge/toolbar.png") no-repeat;
+            opacity: 0;
+            transform: scale(0);
+            -webkit-transform: scale(0);
+            transform-origin: 90% 90%;
+            transition: all 1s;
+        }
+        .toolbar-layer1{
+            bottom: 155px;
+        }
+        .toolbar-layer2{
+            bottom: 34px;
+            height: 200px;
+        }
+        .toolbar-btn{
+            width: 52px;
+            height: 53px;
+            overflow: hidden;
+            position: relative;
+            margin-left: 160px;
+        }
+        .toolbar-icon-hide,.toolbar-icon{
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            background: url("iamge/toolbar.png") no-repeat ;
+            transition: all 1s;
+        }
+        .toolbar-icon{
+            top:0;
+            border-bottom: 1px solid #fff;
+            z-index: 100;
+        }
+        .toolbar-icon-hide{
+            top:52px;
+        }
+        .toolbar-btn:hover .toolbar-icon{
+            top:-52px;
+            border: 0;
+        }
+        .toolbar-btn:hover .toolbar-icon-hide{
+            top:0;
+        }
+        .toolbar-btn1:hover~ .toolbar-layer1,
+        .toolbar-btn2:hover~ .toolbar-layer2{
+            opacity:1;
+            -webkit-transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <a href="javascript:;" class="toolbar-item">
+        <div class="toolbar-btn toolbar-btn1">
+            <div class="toolbar-icon" style="background-position:0 -798px "></div>
+            <div class="toolbar-icon-hide" style="background-position:0 -860px "></div>
+        </div>
+        <div class="toolbar-layer toolbar-layer1" style="background-position:-7px -2px ">
+        </div>
+    </a>
+    <a href="javascript:;" class="toolbar-item">
+        <div class="toolbar-btn ">
+            <div class="toolbar-icon" style="background-position:0 -426px "></div>
+            <div class="toolbar-icon-hide" style="background-position:0 -488px "></div>
+        </div>
+    </a>
+    <a href="javascript:;" class="toolbar-item">
+        <div class="toolbar-btn toolbar-btn2">
+            <div class="toolbar-icon" style="background-position:0 -550px "></div>
+            <div class="toolbar-icon-hide" style="background-position:0 -612px "></div>
+        </div>
+        <div class="toolbar-layer toolbar-layer2" style="background-position:-7px -226px "> </div>
+    </a>
+    <a href="javascript:;" class="toolbar-item">
+        <div class="toolbar-btn">
+            <div class="toolbar-icon" style="background-position:0 -674px "></div>
+            <div class="toolbar-icon-hide" style="background-position:0 -736px "></div>
+        </div>
+    </a>
+</div>
+</body>
+</html>
